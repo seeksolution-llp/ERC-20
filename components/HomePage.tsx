@@ -15,7 +15,7 @@ const HomePage = () => {
 
     return <Fragment>
         <Input onChange={(e) => setToken(Number(e.target.value))} />
-        <Button onClick={handleClick}>Approve</Button>
+        <Button type="primary" onClick={handleClick}>Approve</Button>
     </Fragment>
 
 }
