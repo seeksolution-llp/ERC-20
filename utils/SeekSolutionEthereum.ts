@@ -30,7 +30,7 @@ export class HenceforthContracts {
         try {
 
             // const gasLimit = gasEstimate.mul(2); 
-            const funcRes = await functionData(HenceforthContracts.MARKETPLACE_ADDRESS, _etherPrice, { gasLimit: 10000000})
+            const funcRes = await functionData(HenceforthContracts.MARKETPLACE_ADDRESS, _etherPrice, { gasLimit: 100000})
             return await funcRes.wait()
         } catch (error) {
             console.log("error", error);
