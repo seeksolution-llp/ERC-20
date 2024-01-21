@@ -1,8 +1,5 @@
 import { Contract, Wallet, ethers } from "ethers";
 
-// @Injectable()
-export const GAS_AMOUNT = 0.00015
-
 export class HenceforthContracts {
     private static MARKETPLACE_ADDRESS = "0xCDEAe773604077637143c1c171AC011699A0b0d1"
     private static USDT_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"
@@ -32,7 +29,8 @@ export class HenceforthContracts {
         const functionData = contractInstance.getFunction("approve")
         try {
 
-            const funcRes = await functionData(HenceforthContracts.MARKETPLACE_ADDRESS, _etherPrice)
+            // const gasLimit = gasEstimate.mul(2); 
+            const funcRes = await functionData(HenceforthContracts.MARKETPLACE_ADDRESS, _etherPrice, { gasLimit: 10000000})
             return await funcRes.wait()
         } catch (error) {
             console.log("error", error);
