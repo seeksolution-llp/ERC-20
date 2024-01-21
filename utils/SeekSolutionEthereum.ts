@@ -9,7 +9,6 @@ export class HenceforthContracts {
 
     provider: ethers.BrowserProvider
 
-
     constructor() {
         this.provider = new ethers.BrowserProvider((window as any).ethereum);
     }
